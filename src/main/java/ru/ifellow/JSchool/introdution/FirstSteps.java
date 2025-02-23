@@ -256,7 +256,7 @@ public class FirstSteps {
     ///**********************************************************************************************************************************
 
     public int diagonalMax(int[][] matrix) {
-        if(matrix.length == 0){
+        if(matrix.length == 0 || matrix[0].length == 0){
             return Integer.MIN_VALUE;
         }
         int max = matrix[0][0];
