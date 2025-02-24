@@ -104,19 +104,19 @@ public class FirstSteps {
 
     ///**********************************************************************************************************************************
 
-//    public int max(int[] array) {
-//        if (array.length == 0){
-//            return Integer.MIN_VALUE;
-//        }
-//        int max = array[0];
-//
-//        for(int i : array){
-//            if(max > i){
-//                max = i;
-//            }
-//        }
-//        return max;
-//    }
+    public int max(int[] array) {
+        if (array.length == 0){
+            return Integer.MIN_VALUE;
+        }
+        int max = array[0];
+
+        for(int i : array){
+            if(max < i){
+                max = i;
+            }
+        }
+        return max;
+    }
 
     //    public int max(int[] array) {
 //        if (array.length == 0){
@@ -124,13 +124,7 @@ public class FirstSteps {
 //        }
 //        return Arrays.stream(array).max().getAsInt();
 //    }
-    public int max(int[] array) {
-        if (array.length == 0){
-            return Integer.MIN_VALUE;
-        }
-        Arrays.sort(array);
-        return array[array.length - 1];
-    }
+
 
 
 
@@ -158,7 +152,7 @@ public class FirstSteps {
         }
 
         for (int i = 0; i < array.length - 1; i++) {
-            if(array[i] < array[i + 1]){
+            if(array[i] <= array[i + 1]){
                 return false;
             }
         }
@@ -241,10 +235,8 @@ public class FirstSteps {
     ///**********************************************************************************************************************************
 
     public int max(int[][] matrix) {
-        if(matrix.length == 0){
-            return Integer.MIN_VALUE;
-        }
-        int max = matrix[0][0];
+
+        int max = Integer.MIN_VALUE;
         for (int i = 0; i < matrix.length; i++) {
             if(max < max(matrix[i])){
                 max = max(matrix[i]);
@@ -256,10 +248,7 @@ public class FirstSteps {
     ///**********************************************************************************************************************************
 
     public int diagonalMax(int[][] matrix) {
-        if(matrix.length == 0 || matrix[0].length == 0){
-            return Integer.MIN_VALUE;
-        }
-        int max = matrix[0][0];
+        int max = Integer.MIN_VALUE;
         for (int i = 0; i < matrix.length; i++) {
             if(max < matrix[i][i]){
                 max = matrix[i][i];
